@@ -32,9 +32,10 @@
 5. Установка зависимостей
 
 ```pip3 install -r requirements.txt```
-6. Для Tortois нужно положить базу по пути (пока ненашел причину почему tortoise не видит относительный путь)
-сама база находится в task1 её следует скопировать по пути приведнному ниже.  
-```db_url="sqlite:///C:\\python_django2\\19module\\Compare_Orm\\db.sqlite3"```,
+
+6. Для Tortois нужно положить базу по абсолютному пути, указав его в tortoise_view.py
+```DB_PATH = "sqlite:///C:\\python_django2\\new_cmp\\Compare_Orm\\db.sqlite3" ```
+
 
 ## Что применялось
 <ul>
