@@ -3,17 +3,16 @@ import time
 
 from tortoise import Tortoise, fields, models, run_async
 from tortoise.functions import Count
-from T_models.T_Cinema_ import T_Cinema
-from T_models.T_Review_ import T_Review
+from task1.T_models.T_Cinema_ import T_Cinema
+from task1.T_models.T_Review_ import T_Review
 
-DB_PATH = r"/Compare_Orm\db.sqlite3"
-
+DB_PATH = "sqlite:///C:\\python_django2\\new_cmp\\Compare_Orm\\db.sqlite3"
 
 async def tortoise_init():
     db_file_path = os.path.join(os.getcwd(), 'db.sqlite3')
     await Tortoise.init(
-        #db_url="sqlite:///C:\\python_django2\\19module\\Compare_Orm\\db.sqlite3",
-        db_url="sqlite:///C:\\python_django2\\new_cmp\\Compare_Orm\\db.sqlite3",
+        db_url="sqlite:///C:\\python_django2\\19module\\Compare_Orm\\db.sqlite3",
+        #db_url="sqlite:///C:\\python_django2\\new_cmp\\Compare_Orm\\db.sqlite3",
         #db_url="sqlite:///" + db_file_path,
         modules={'models': ['T_models.T_Cinema_', 'T_models.T_Review_']},
     )
