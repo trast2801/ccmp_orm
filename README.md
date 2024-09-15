@@ -11,7 +11,7 @@
 
 ## Установка 
 
-У вас должны быть установлены [зависимости проекта](https://github.com/trast2801/compare_orm/blob/master/Compare_Orm/requirements.txt)
+У вас должны быть установлены [зависимости проекта](https://github.com/trast2801/ccmp_orm/tree/master/Compare_Orm)
 
 1. Клонирование репозитория 
 
