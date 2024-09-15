@@ -34,7 +34,9 @@
 ```pip3 install -r requirements.txt```
 
 6. Для Tortois нужно положить базу по абсолютному пути, указав его в tortoise_view.py
-```DB_PATH = "sqlite:///C:\\python_django2\\new_cmp\\Compare_Orm\\db.sqlite3" ```
+```    await Tortoise.init(
+        db_url="sqlite:///C:\\python_django2\\19module\\Compare_Orm\\db.sqlite3",
+        modules={'models': ['T_models.T_Cinema_', 'T_models.T_Review_']}, ) ```
 
 
 ## Что применялось
