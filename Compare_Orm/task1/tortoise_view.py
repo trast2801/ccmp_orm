@@ -13,7 +13,8 @@ async def tortoise_init():
     db_file_path = os.path.join(os.getcwd(), 'db.sqlite3')
     await Tortoise.init(
         #db_url="sqlite:///C:\\python_django2\\19module\\Compare_Orm\\db.sqlite3",
-        db_url=r"sqlite:///C:\python_django2\cmp_orm__\Compare_Orm\task1\db.sqlite3",
+        #db_url=r"sqlite:///C:\python_django2\cmp_orm__\Compare_Orm\task1\db.sqlite3",
+        db_url=r"sqlite:///" + db_file_path,
         modules={'models': ['T_models.T_Cinema_', 'T_models.T_Review_']},
     )
     await Tortoise.generate_schemas()
