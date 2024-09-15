@@ -2,6 +2,7 @@ import os
 import time
 
 from tortoise import Tortoise, fields, models, run_async
+from task1.T_models.T_Review_ import T_Review
 from tortoise.functions import Count
 from task1.T_models.T_Cinema_ import T_Cinema
 from task1.T_models.T_Review_ import T_Review
