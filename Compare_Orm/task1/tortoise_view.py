@@ -2,19 +2,18 @@ import os
 import time
 
 from tortoise import Tortoise, fields, models, run_async
-from task1.T_models.T_Review_ import T_Review
+
 from tortoise.functions import Count
-from task1.T_models.T_Cinema_ import T_Cinema
-from task1.T_models.T_Review_ import T_Review
+from T_models.T_Cinema_ import T_Cinema
+from T_models.T_Review_ import T_Review
 
 DB_PATH = "sqlite:///C:\\python_django2\\new_cmp\\Compare_Orm\\db.sqlite3"
 
 async def tortoise_init():
     db_file_path = os.path.join(os.getcwd(), 'db.sqlite3')
     await Tortoise.init(
-        db_url="sqlite:///C:\\python_django2\\19module\\Compare_Orm\\db.sqlite3",
-        #db_url="sqlite:///C:\\python_django2\\new_cmp\\Compare_Orm\\db.sqlite3",
-        #db_url="sqlite:///" + db_file_path,
+        #db_url="sqlite:///C:\\python_django2\\19module\\Compare_Orm\\db.sqlite3",
+        db_url=r"sqlite:///C:\python_django2\cmp_orm__\Compare_Orm\task1\db.sqlite3",
         modules={'models': ['T_models.T_Cinema_', 'T_models.T_Review_']},
     )
     await Tortoise.generate_schemas()
@@ -80,16 +79,7 @@ async def t_update_records(data: dict):
 
 
 async def tortoise_main(data: dict):
-    data = {
-        'Простой запрос к таблице есть запись': [["", "", ""]],
-        'Простой запрос к таблице нет записи': [["", "", ""]],
-        'Запрос с GROUP BY': [["", "", ""]],
-        'Запрос с сортировкой': [["", "", ""]],
-        'Запрос с условием фильтрации': [["", "", ""]],
-        'Запрос с JOIN': [["", "", ""]],
-        'Добавить запись': [["", "", ""]],
-        'Обновление по фильтру': [["", "", ""]]
-    }
+
     await tortoise_init()
     await t_simple_query(data, True)
     await t_simple_query(data, False)
