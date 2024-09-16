@@ -38,7 +38,8 @@
    сама база лежит в task1 (пример)
 ```    await Tortoise.init(
         db_url="sqlite:///C:\\python_django2\\19module\\Compare_Orm\\db.sqlite3",
-        modules={'models': ['T_models.T_Cinema_', 'T_models.T_Review_']}, ) ```
+        modules={'models': ['T_models.T_Cinema_', 'T_models.T_Review_']}, )
+```
 
 
 ## Что применялось
